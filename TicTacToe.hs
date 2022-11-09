@@ -65,7 +65,7 @@ diags (cs, n)
 -------------------------------------------------------------------
 
 gameOver :: Board -> Bool
-gameOver board = check (rows board) || check (cols board) || check (diags board)
+gameOver board = check (rows board) || check (cols board) || check (diags board) || notElem Empty (fst board)
   where
     check :: [[Cell]] -> Bool
     check [] = False
